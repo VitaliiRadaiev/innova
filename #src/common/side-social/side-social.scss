@@ -1,0 +1,48 @@
+.side-social {
+    position: absolute;
+    top: 200px;
+    left: 20px;
+    z-index: 10;
+
+    @media (max-width: $md4+px) {
+        display: none;
+    }
+
+    &__label {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: 0.02em;
+        color: #d5dbe0;
+        transform: rotate(90deg) translateY(52px);
+        margin-bottom: 90px;
+    }
+
+    &__list {
+        & > li {
+            margin-bottom: 30px;
+            & > a {
+                display: block;
+                 height: 18px;
+
+                & svg, & img {
+                    height: 18px;
+                    width: auto;
+                }
+
+                & svg path {
+                    transition: all .3s ease;
+                    fill: #fff;
+                }
+
+                @media (min-width: 992px) {
+                    &:hover {
+                        & svg path {
+                            transition: all .3s ease;
+                            fill: $mainColor
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
