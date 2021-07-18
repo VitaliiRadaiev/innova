@@ -4,6 +4,29 @@
     left: 20px;
     z-index: 10;
 
+    &.side-social_dark {
+        & .side-social__label {
+            color: $titleColor;
+        }
+        & .side-social__list {
+            & > li {
+                & > a {
+                    & svg path {
+                        fill: $titleColor;
+                    }
+
+                   @media (min-width: 992px) {
+                       &:hover {
+                           & svg path {
+                               fill: $mainColor;
+                           }
+                       }
+                   }
+                }
+            }
+        }
+    }
+
     @media (max-width: $md4+px) {
         display: none;
     }

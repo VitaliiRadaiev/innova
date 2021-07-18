@@ -45,7 +45,7 @@ $('.completed__block').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-
+    adaptiveHeight: true,
     prevArrow: '.completed__arrleft',
     nextArrow: '.completed__arrright',
 });

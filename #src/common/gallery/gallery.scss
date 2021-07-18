@@ -1,0 +1,102 @@
+.gallery {
+    margin-bottom: 100px;
+    @media (max-width: $md3+px) {
+        margin-bottom: 50px;
+    }
+    
+    & .head__title {
+        margin-bottom: 21px;
+    }
+
+    &__nav {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+
+        @media (max-width: $md2+px) {
+            flex-wrap: nowrap;
+            overflow: auto;
+        }
+    }
+
+    &__nav-item {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $textColor;
+        min-height: 84px;
+        min-width: 271px;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 18px;
+        line-height: 25px;
+        letter-spacing: 0.06em;
+        color: #838d9f;
+        margin-bottom: 15px;
+
+        &:not(:last-child) {
+            margin-right: 22px;
+        }
+
+        @media (max-width: $md2+px) {
+            min-height: 50px;
+            min-width: 220px;
+            font-size: 16px;
+            line-height: 20px;
+            white-space: nowrap;
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                &:not(.active) {
+                    background-color: rgba($titleColor, 0.1);
+                }
+                
+            }
+        }
+
+        &.active {
+            background-color: #FAFAFA;
+            border-color: $mainColor;
+            color: $titleColor;
+        }
+    }
+
+    &__slider {
+        display: none;
+        padding: 0 20px;
+        max-width: 1920px;
+        margin: 0 auto;
+        
+        &.active {
+            display: block;
+        }
+
+        & .swiper-slide {
+            height: 783px;
+
+            @media (max-width: $md2+px) {
+                height: 683px;
+            }
+            @media (max-width: $md3+px) {
+                height: 500px;
+            }
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 3;
+    }
+
+    &__btn-left {
+        left: 0;
+    }
+
+    &__btn-right {
+        right: 0;
+    }
+}

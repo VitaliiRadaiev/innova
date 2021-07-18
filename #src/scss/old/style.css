@@ -1163,8 +1163,8 @@ header .wrapper {
 }
 
 .articles__hidden {
-  height: 373px;
-  width: 332px;
+  height: 100%;
+  width: 100%;
   background: #EDF4F9;
   opacity: 0;
   position: absolute;

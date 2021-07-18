@@ -1,0 +1,33 @@
+.cards-slider {
+    margin: 0 auto;
+    max-width: 1900px;
+    padding: 0 20px;
+
+
+    & .swiper-slide {
+        width: 372px;
+
+        @media (max-width: $md3+px) {
+            width: 300px;
+        }
+        @media (max-width: $md4+px) {
+            width: 260px;
+        }
+    }
+    &__btn {
+        position: absolute;
+        top: 50%;
+        z-index: 3;
+        transform: translateY(-50%);
+ 
+
+    }
+
+    &__btn-left {
+        left: 0;
+    }
+
+    &__btn-right {
+        right: 0;
+    }
+}

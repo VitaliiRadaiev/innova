@@ -1,0 +1,148 @@
+.hero {
+    position: relative;
+    margin-bottom: 3px;
+
+    @media (max-width: $md1+px) {
+        margin-bottom: 100px;
+    }
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 50px;
+    }
+
+    &__body {
+
+        @media (min-width: 1268px) {
+            display: flex;
+
+        }
+    }
+
+    &__col-1 {
+        flex: 1 1 auto;
+        padding-right: 30px;
+        padding-top: 19px;
+
+        & .breadcrumbs {
+            margin-bottom: 23px;
+        }
+
+        & .company__blocks {
+            
+            & .company__descrip {
+                color: $titleColor;
+                max-width: 174px;
+            }
+
+            & .company__block {
+                margin-top: 0;
+
+                &:not(:last-child) {
+                    margin-bottom: 54px;
+
+                }
+            }
+        }
+
+        @media (max-width: 1559px) {
+            padding-left: 50px;
+        }
+
+        @media (max-width: $md1+px) {
+            margin-bottom: 50px;
+        }
+
+        @media (max-width: $md3+px) {
+            padding-right: 70px;
+        }
+
+        @media (max-width: $md4+px) {
+            padding-left: 20px;
+            padding-right: 50px;
+        }
+    }
+
+    &__col-2 {
+        flex: 0 0 42%;
+
+        @media (min-width: 1268px) {
+            position: relative;
+
+        }
+    }
+
+    &__flex-wrap {
+
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+
+    &__flex-wrap-col-1 {
+        flex: 1 1 auto;
+        padding-right: 30px;
+
+        @media (max-width: $md3+px) {
+            padding-right:0;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__flex-wrap-col-2 {
+        flex: 1 0 286px;
+        padding-top: 11px;
+    }
+
+    &__title {
+      
+        margin-bottom: 18px;
+
+        @media (min-width: 768px) {
+            max-width: 416px;
+        }
+    }
+
+    &_text {
+        font-size: 16px;
+        line-height: 1.57em;
+        letter-spacing: 0.06em;
+        color: $textColor;
+
+        @media (min-width: 768px) {
+            max-width: 400px;
+            font-size: 18px;
+        }
+    }
+
+    &__img {
+        height: 100%;
+        min-height: 932px;
+
+        @media (max-width: $md1+px) {
+            margin-top: 0 !important;
+            min-height: 600px;
+        }
+    }
+
+    &__phone {
+        position: absolute;
+        right: 0;
+        bottom: 132px;
+        transform: translateX(100%);
+        z-index: 2;
+
+        @media (max-width: 1625px) {
+            transform: translateX(0%);
+        }
+
+        @media (max-width: $md1+px) {
+            bottom: auto;
+            top: 0;
+            right: 20px;
+        }
+
+        @media (max-width: $md4+px) {
+            right: 8px;
+        }
+    }
+}

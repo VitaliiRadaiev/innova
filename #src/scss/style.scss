@@ -205,12 +205,21 @@ textarea {
 	text-align: center;
 }
 
+.mb-100 {
+	margin-bottom: 100px;
+
+	@media (max-width: $md3+px) {
+		margin-bottom: 50px;
+	}
+}
+
 ._page {
 	flex: 1 1 auto;
 	padding: 1px 0;
 	width: 100%;
 	min-height: 100%;
 	position: relative;
+	overflow: hidden;
 
 	&:before {
 		position: absolute;
@@ -224,32 +233,31 @@ textarea {
 		pointer-events: none;
 	}
 
-
 	@media (min-width: 992px) {
 		& > .grid-lines {
 			pointer-events: none;
 			position: absolute;
 			z-index: 2;
 			top: 0;
-			left:0 ;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			display: flex;
 			flex-direction: column;
-	
+
 			& > .container {
 				position: relative;
 				flex: 1 1 auto;
 				width: 100%;
 			}
-	
+
 			& .grid-lines-1 {
 				position: absolute;
 				top: 0;
 				left: 15px;
 				height: 100%;
 				width: 1px;
-				background-color: rgba(#D5DBE0, 0.3);
+				background-color: rgba(#d5dbe0, 0.3);
 			}
 			& .grid-lines-2 {
 				position: absolute;
@@ -257,12 +265,10 @@ textarea {
 				left: 34%;
 				height: 100%;
 				width: 1px;
-				background-color: rgba(#D5DBE0, 0.3);
+				background-color: rgba(#d5dbe0, 0.3);
 			}
 		}
 	}
-
-
 }
 
 .container {
@@ -300,12 +306,28 @@ textarea {
 	}
 }
 .title-2 {
+	font-family: $titleFontFamily;
+	font-size: 38px;
+	line-height: 50px;
+	text-transform: uppercase;
+	color: $titleColor;
+
+	@media (max-width: $md3+px) {
+		font-size: 30px;
+	}
+	@media (max-width: $md4+px) {
+		font-size: 26px;
+	}
 }
 
 .title-3 {
 }
 
 .title-4 {
+	font-family: $titleFontFamily;
+	font-size: 28px;
+	line-height: 1.42em;
+	color: $titleColor;
 }
 
 .title-5 {
@@ -321,6 +343,15 @@ textarea {
 	display: flex;
 	align-items: center;
 
+	@media (max-width: $md4+px) {
+		font-size: 12px;
+
+		&::after {
+			width: 50px;
+			margin-left: 10px;
+		}
+	}
+
 	&:after {
 		height: 2px;
 		content: "";
@@ -334,15 +365,179 @@ textarea {
 
 .text {
 }
+
 // === and title ========================================================================
 
 // === btn ========================================================================
 .btn-default {
+	min-width: 312px;
+	min-height: 72px;
+	background: $mainColor;
+	box-shadow: 0px 15px 30px rgba(233, 189, 148, 0.182332), 0px 8px 40px rgba(233, 189, 148, 0.166149),
+		0px 2px 20px rgba(233, 189, 148, 0.127999);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px 45px 10px 38px;
+	align-self: flex-start;
+	font-size: 20px;
+	line-height: 1.4em;
+	color: #ffffff;
+	position: relative;
+	cursor: pointer;
+	@media (max-width: $md4+px) {
+		font-size: 16px;
+		min-width: 260px;
+		padding: 8px 35px 8px 20px;
+		min-height: 50px;
+
+		& img {
+			max-height: 24px;
+		}
+	}
+
+	&:after {
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		transform: translateY(-50%);
+		content: "";
+		border: 6px solid transparent;
+		border-left: 6px solid #fff;
+		margin-left: 20px;
+		transition: all 0.3s ease;
+		display: inline-block;
+	}
+
+	& img {
+		max-height: 32px;
+		width: auto;
+		margin-left: 10px;
+		transition: all 0.3s ease;
+
+		& + .btn-default:after {
+			display: none;
+		}
+	}
+
+	@media (min-width: 992px) {
+		&:hover {
+			& img {
+				transform: scale(1.06);
+			}
+			&:after {
+				transform: translateY(-50%) translateX(5px);
+			}
+		}
+	}
 }
 
 button.btn-default {
 }
 
+.phone-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 84px;
+	width: 84px;
+	background-color: $mainColor;
+	box-shadow: 0px 15px 30px rgba(233, 189, 148, 0.182332), 0px 8px 40px rgba(233, 189, 148, 0.166149),
+		0px 2px 20px rgba(233, 189, 148, 0.127999);
+	transform: translateX(100%);
+	padding: 12px;
+
+	@media (min-width: 992px) {
+		&:hover {
+			& img {
+				transform: rotate(10deg) scale(1.1);
+			}
+		}
+	}
+
+	& img {
+		transition: all 0.3s ease;
+		max-width: 100%;
+		max-height: 100%;
+		width: auto;
+		height: auto;
+	}
+
+	@media (max-width: $md2+px) {
+		height: 54px;
+		width: 54px;
+	}
+}
+
+.slider-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 84px;
+	height: 70px;
+	padding: 13px;
+	background-color: rgba(#edf4f9, 0.5);
+	transition: all 0.3s ease;
+	cursor: pointer;
+	box-shadow: 0 0 20px rgba($titleColor, 0.2);
+
+	& > svg {
+		max-width: 100%;
+		height: auto;
+		& path {
+			transition: all 0.3s ease;
+			fill: #fff;
+		}
+	}
+
+	&.swiper-button-disabled {
+		display: none;
+	}
+
+	@media (min-width: 992px) {
+		&:hover {
+			background-color: #fff;
+			& > svg path {
+				fill: $mainColor;
+			}
+		}
+	}
+}
+
+.card-btn {
+	display: inline-flex;
+	align-items: center;
+	background: rgba(237, 244, 249, 0.2);
+	min-height: 42px;
+	min-width: 170px;
+	padding: 5px 34px 5px 5px;
+	font-size: 14px;
+	line-height: 1.2em;
+	text-transform: uppercase;
+	align-self: flex-start;
+	position: relative;
+	font-family: $mainFontFamily;
+	font-weight: 400;
+	letter-spacing: 0;
+
+	@media (min-width: 992px) {
+		&:hover {
+			&::before {
+				transform: translateY(-50%) translateX(5px);
+			}
+		}
+	}
+
+	&:before {
+		position: absolute;
+		font-family: "icomoon";
+		content: "\e906";
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+		transition: all 0.3s ease;
+	}
+}
 // === and btn ========================================================================
 
 .input {
@@ -354,8 +549,38 @@ button.btn-default {
 .link {
 }
 
+.head {
+	max-width: 713px;
+
+	&__suptitle {
+		margin-bottom: 37px;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 37px;
+
+		@media (max-width: $md3+px) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__text {
+		font-size: 18px;
+		line-height: 1.55em;
+		letter-spacing: 0.06em;
+	}
+}
+
 // === TEXT CONTETN BLOCK ========================================================================
 .text-content {
+	font-size: 16px;
+	line-height: 1.625em;
+	letter-spacing: 0.02em;
+
 	& h1 {
 	}
 	& h2 {
@@ -363,6 +588,12 @@ button.btn-default {
 	& h3 {
 	}
 	& h4 {
+		font-family: $titleFontFamily;
+		font-size: 18px;
+		line-height: 1.666em;
+		letter-spacing: 0.075em;
+		color: $titleColor;
+		margin-bottom: 1.44em;
 	}
 
 	& h5 {
@@ -371,6 +602,22 @@ button.btn-default {
 	}
 
 	& p {
+		margin-bottom: 2em;
+
+		& > small {
+			font-size: 14px;
+			line-height: 2.14em;
+			text-transform: uppercase;
+			color: #4b7597;
+			margin-bottom: 1.42em;
+		}
+
+		& > i {
+			font-size: 14px;
+			line-height: 1.85em;
+			letter-spacing: 0.15em;
+			font-style: normal;
+		}
 	}
 
 	& ul {
@@ -381,6 +628,15 @@ button.btn-default {
 
 	& figure {
 	}
+
+	& hr {
+		display: block;
+		width: 150px;
+		height: 1px;
+		background-color: $mainColor;
+		margin-top: -4px;
+		margin-bottom: 30px;
+	}
 }
 // === and TEXT CONTETN BLOCK ========================================================================
 
@@ -390,12 +646,18 @@ button.btn-default {
 @import "../common/checkbox/checkbox";
 @import "../common/promo-header/promo-header";
 @import "../common/side-social/side-social";
+@import "../common/hero/hero";
+@import "../common/breadcrumbs/breadcrumbs";
+@import "../common/cards-slider/cards-slider";
+@import "../common/text-block/text-block";
+@import "../common/gallery/gallery";
+@import "../common/questionnaire/questionnaire";
+@import "../common/feedback/feedback";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
 
-// ==== HOME =====================================================
 @import "pages/home";
-// ==== AND HOME =====================================================
+@import "pages/single-product-info";
 
 // ==== AND PAGES =====================================================

@@ -98,6 +98,7 @@ function spollerInit() {
 
 			if(spoller.classList.contains('_active')) {
 				_slideDown(spoller.nextElementSibling);
+				spoller.parentElement.classList.add('_active');
 			}
 
 			spoller.addEventListener("click", function (e) {

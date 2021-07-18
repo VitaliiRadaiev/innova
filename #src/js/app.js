@@ -8,18 +8,18 @@ window.addEventListener('load', function () {
 	document.body.classList.add('is-load');
 
 	// ==== ADD PADDING-TOP ================================
-	// {
-	// 	let wrapper = document.querySelector('._page._padding-top');
-	// 	if (wrapper) {
-	// 		let header = document.querySelector('.header');
-	// 		if(header) {
-	// 			const setPedding = () => wrapper.style.paddingTop = header.clientHeight + 'px';
-	// 			setPedding();
-	// 			window.addEventListener('resize', setPedding);
-	// 		}
+	{
+		let wrapper = document.querySelector('._margin-top');
+		if (wrapper) {
+			let header = document.querySelector('.header');
+			if(header) {
+				const setPedding = () => wrapper.style.marginTop = header.clientHeight + 17 + 'px';
+				setPedding();
+				window.addEventListener('resize', setPedding);
+			}
 			
-	// 	}
-	// }
+		}
+	}
 	// ==== AND ADD PADDING-TOP ================================
 
 	@@include('./old/script.js');
@@ -29,6 +29,11 @@ window.addEventListener('load', function () {
 	@@include('../common/burger/burger.js');
 	@@include('../common/checkbox/checkbox.js');
 	@@include('../common/promo-header/promo-header.js');
+	@@include('../common/hero/hero.js');
+	@@include('../common/cards-slider/cards-slider.js');
+	@@include('../common/gallery/gallery.js');
+	@@include('../common/questionnaire/questionnaire.js');
+	@@include('../common/feedback/feedback.js');
 	//@@includ e('../common/popup/popup.js');
 	
 });
