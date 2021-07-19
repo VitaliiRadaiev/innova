@@ -1,0 +1,135 @@
+.projects-page {
+    &:before {
+        width: 61%;
+    }
+
+    & > *:not(.promo-header):not(.grid-lines):not(.side-social) {
+        position: relative;
+        z-index: 3;
+    }
+
+    & .side-social {
+        top: 80px;
+        left: 26px;
+    }
+}
+
+
+.projects {
+    margin-bottom: 100px;
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 50px;
+    }
+
+    & .head__suptitle {}
+    & .head__title {
+        @media (min-width: 992px) {
+            margin-bottom: 45px;
+        }
+    }
+
+    &__list {
+        margin: 0 auto;
+        max-width: 1920px;
+        padding: 0 30px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+
+        @media (max-width: $md1+px) {
+            padding: 0 20px;
+            display: block;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 0;
+        }
+
+        & > li {
+            flex: 0 1 calc(50% - 10px);
+            margin-bottom: 31px;
+        }
+    }
+
+    &__load-more {
+    }
+}
+
+
+.card-project {
+    background-color: #FAFAFA;
+
+    @media (min-width: 768px) {
+        display: flex;
+    }
+
+    &__col-1 {
+        flex: 0 0 372px;
+        display: flex;
+        flex-direction: column;
+        padding: 83px 33px 64px 48px;
+
+        @media (max-width: 1439.98px) {
+            flex: 0 0 272px;
+            padding: 83px 33px 64px 30px;
+        }
+
+        @media (max-width: $md1+px) {
+            flex: 0 0 372px;
+            padding: 83px 33px 64px 48px;
+        }
+
+        @media (max-width: $md3+px) {
+            padding: 50px 30px;
+        }
+    }
+
+    &__col-2 {
+        flex: 1 1 auto;
+    }
+
+    &__img {
+        min-height: 808px;
+        height: 100%;
+
+        @media (max-width: $md3+px) {
+            min-height: 508px;
+        }
+    }
+
+    & .completed__box {
+        margin-bottom: 33px;
+    }
+    
+    & .completed__name {
+        margin-bottom: 10px;
+    }
+    
+    & .completed__link {
+        margin-top: auto;
+        position: relative;
+    
+        &:after {
+            content: "";
+            font-family: "icomoon";
+            content: "\e906";
+            display: inline-block;
+            -webkit-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    
+        @media (min-width: 992px) {
+            &:hover {
+                &:after {
+                    transform: translateX(5px);
+                }
+            }
+        }
+    }
+    
+}
