@@ -584,6 +584,12 @@ button.btn-default {
 	& h1 {
 	}
 	& h2 {
+		font-family: $titleFontFamily;
+		font-size: 28px;
+		line-height: 1.42em;
+		color: $titleColor;
+		margin-bottom: 1.03em;
+		font-weight: 300;
 	}
 	& h3 {
 	}
@@ -594,6 +600,12 @@ button.btn-default {
 		letter-spacing: 0.075em;
 		color: $titleColor;
 		margin-bottom: 1.44em;
+
+		& > i {
+			font-weight: 300;
+			letter-spacing: 0.29em;
+			font-style: normal;
+		}
 	}
 
 	& h5 {
@@ -618,15 +630,41 @@ button.btn-default {
 			letter-spacing: 0.15em;
 			font-style: normal;
 		}
+
+		& ~ h2 {
+			margin-top: 3.5em;
+		}
+
+		& ~ h4 {
+			margin-top: 3.38em;
+		}
 	}
 
 	& ul {
+
+		&:not(.list-col-2) {
+			margin-bottom: 2em;
+
+			& > li {
+				&:before {
+					content: '-';
+					
+				}
+			}
+		}
+
 	}
 
 	& ol {
 	}
 
 	& figure {
+		margin-bottom: 2em;
+		& img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	& hr {
@@ -653,6 +691,7 @@ button.btn-default {
 @import "../common/gallery/gallery";
 @import "../common/questionnaire/questionnaire";
 @import "../common/feedback/feedback";
+@import "../common/rating/rating";
 // ==== BLOCKS =====================================================
 
 // ==== PAGES =====================================================
@@ -661,5 +700,6 @@ button.btn-default {
 @import "pages/single-product-info";
 @import "pages/projects";
 @import "pages/articles-listing";
+@import "pages/article";
 
 // ==== AND PAGES =====================================================

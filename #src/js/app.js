@@ -34,6 +34,7 @@ window.addEventListener('load', function () {
 	@@include('../common/gallery/gallery.js');
 	@@include('../common/questionnaire/questionnaire.js');
 	@@include('../common/feedback/feedback.js');
+	@@include('../common/rating/rating.js');
 	//@@includ e('../common/popup/popup.js');
 	
 });
