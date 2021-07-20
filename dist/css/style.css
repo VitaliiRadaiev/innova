@@ -8497,6 +8497,14 @@ textarea {
     margin-bottom: 20px;
   }
 
+  .text-content p ~ h2 {
+    margin-top: 2.5em;
+  }
+
+  .text-content p ~ h4 {
+    margin-top: 3em;
+  }
+
   .hero {
     margin-bottom: 50px;
   }

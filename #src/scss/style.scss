@@ -633,10 +633,18 @@ button.btn-default {
 
 		& ~ h2 {
 			margin-top: 3.5em;
+
+			@media (max-width: $md3+px) {
+				margin-top: 2.5em;
+			}
 		}
 
 		& ~ h4 {
 			margin-top: 3.38em;
+
+			@media (max-width: $md3+px) {
+				margin-top: 3em;
+			}
 		}
 	}
 
