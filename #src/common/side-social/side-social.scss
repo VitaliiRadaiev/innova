@@ -4,6 +4,11 @@
     left: 20px;
     z-index: 10;
 
+    &._is-form-open {
+        opacity: 0;
+        visibility: hidden;
+    }
+
     &.side-social_dark {
         & .side-social__label {
             color: $titleColor;

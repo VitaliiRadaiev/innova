@@ -541,9 +541,75 @@ button.btn-default {
 // === and btn ========================================================================
 
 .input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #fafafa;
+    border: 1px solid #d5dbe0;
+    height: 60px;
+    padding: 10px 18px;
+    font-size: 16px;
+    line-height: 1.4em;
+    letter-spacing: 0.02em;
+    color: $titleColor;
+
+    &::placeholder {
+        color: $textColor;
+        font-size: 16px;
+        line-height: 1.4em;
+        letter-spacing: 0.02em;
+    }
 }
 
 .textarea {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background: #fafafa;
+    border: 1px solid #d5dbe0;
+    height: 60px;
+    padding: 17px 18px;
+    font-size: 16px;
+    line-height: 1.4em;
+    letter-spacing: 0.02em;
+    color: $titleColor;
+    resize: none;
+    &::placeholder {
+        color: $textColor;
+        font-size: 16px;
+        line-height: 1.4em;
+        letter-spacing: 0.02em;
+    }
+}
+
+.input-file {
+	display: block;
+
+	& input[type="file"] {
+		display: none;
+	}
+
+	&__wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		background: #fafafa;
+		border: 1px solid #d5dbe0;
+		height: 60px;
+		padding: 10px 18px;
+		font-size: 16px;
+		line-height: 1.4em;
+		letter-spacing: 0.02em;
+		color: $textColor;
+		cursor: pointer;
+	}
+
+	&__result {
+		color: #fff;
+		line-height: 1.2em;
+		font-size: 12px;
+	}
 }
 
 .link {

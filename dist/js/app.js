@@ -899,7 +899,7 @@ function inputs_init(inputs) {
 				//'+375(99)999-99-99'
 				let maskValue = input.dataset.mask;
 				input.classList.add('_mask');
-				Inputmask(maskValue, {
+				Inputmask('+7(999) 999 9999', {
 					//"placeholder": '',
 					clearIncomplete: true,
 					clearMaskOnLostFocus: true,
@@ -1138,16 +1138,16 @@ if(priceSlider) {
 })();;
 	{
     let slider = document.querySelector('.promo-header__body');
-    if(slider) {
+    if (slider) {
         let urls = [];
 
         let promoItems = document.querySelectorAll('.promo-header__item');
-        if(promoItems.length) {
+        if (promoItems.length) {
             promoItems.forEach(item => {
                 let img = item.querySelector('.promo-header__bg img');
                 let src = img.getAttribute('src') || img.getAttribute('data-src');
                 let layer = item.querySelector('.promo-header__top-layer');
-    
+
                 layer.style.backgroundImage = `url(${src})`;
                 urls.push(src);
             })
@@ -1157,7 +1157,7 @@ if(priceSlider) {
 
         let dataSlider = new Swiper(slider, {
             autoHeight: true,
-            effect: 'fade',
+            
             observer: true,
             observeParents: true,
             slidesPerView: 1,
@@ -1165,42 +1165,60 @@ if(priceSlider) {
             speed: 800,
             preloadImages: false,
             lazy: {
-            	loadPrevNext: true,
+                loadPrevNext: true,
+            },
+            mousewheel: {
+                sensitivity: 1,
+                releaseOnEdges: true,
             },
             pagination: {
-            	el: slider.querySelector('.swiper-pagination'),
-            	clickable: true,
-                renderBullet: function(index, className) {
-                    console.log(index);
-                    return '<span class="'+ className +'"> <img src="' + urls[index] + '" alt=""></span>';
+                el: slider.querySelector('.swiper-pagination'),
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '"> <img src="' + urls[index] + '" alt=""></span>';
                 }
             },
-            //watchSlidesVisibility: true,
-
-            /*
             breakpoints: {
                 320: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
-                    autoHeight: true,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
+                    direction: "horizontal",
+                    effect: 'fade',
                 },
                 992: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                },
-                1268: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
+                    direction: "vertical",
+                    effect: 'slide',
                 },
             },
-            */
         });
     }
 
+    //_is-form-open
+    let header = document.querySelector('.header');
+    let social = document.querySelector('.side-social');
+    let promoHeader = document.querySelector('.promo-header');
+    let promoForm = document.querySelector('.promo-header-form');
+    let btnClose = document.querySelector('.promo-header-form__close');
+    let buttonsTriggers = document.querySelectorAll('.promo-header__btn');
+
+    if(buttonsTriggers.length) {
+        buttonsTriggers.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                if(header) header.classList.add('_is-form-open');
+                if(social) social.classList.add('_is-form-open');
+                if(promoHeader) promoHeader.classList.add('_is-form-open');
+                if(promoForm) promoForm.classList.add('open');
+            })
+        })
+    }
+
+    if(btnClose) {
+        btnClose.addEventListener('click', () => {
+            if(header) header.classList.remove('_is-form-open');
+                if(social) social.classList.remove('_is-form-open');
+                if(promoHeader) promoHeader.classList.remove('_is-form-open');
+                if(promoForm) promoForm.classList.remove('open');
+        })
+    }
 };
 	{
     let hero = document.querySelector('.hero');
@@ -1385,6 +1403,30 @@ window.addEventListener('DOMContentLoaded', function() {
 			document.querySelector('body').classList.add('no-webp');
 		}
 	});
+
+
+	{
+		(function uploadFileHandler() {
+			let files = []
+			let inputWrap = document.querySelector('.input-file');
+			let input = inputWrap.querySelector('input[type="file"]');
+			let div = document.createElement('div');
+			div.className = 'input-file__result';
+			inputWrap.append(div);
+			const changeHandler = (event) => {
+				if (!event.target.files.length) {
+					return
+				}
+
+				files = Array.from(event.target.files)
+
+				let result = files.map(item => item.name);
+				div.innerText = result.join(', ');
+			}
+
+			input.addEventListener('change', changeHandler);
+		})()
+	}
 });
 
 //// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">

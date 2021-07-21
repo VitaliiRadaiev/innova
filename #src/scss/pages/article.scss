@@ -325,44 +325,4 @@
     }
 }
 
-.input {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: #fafafa;
-    border: 1px solid #d5dbe0;
-    height: 60px;
-    padding: 10px 18px;
-    font-size: 16px;
-    line-height: 1.4em;
-    letter-spacing: 0.02em;
-    color: $titleColor;
 
-    &::placeholder {
-        color: $textColor;
-        font-size: 16px;
-        line-height: 1.4em;
-        letter-spacing: 0.02em;
-    }
-}
-
-.textarea {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    background: #fafafa;
-    border: 1px solid #d5dbe0;
-    height: 60px;
-    padding: 17px 18px;
-    font-size: 16px;
-    line-height: 1.4em;
-    letter-spacing: 0.02em;
-    color: $titleColor;
-    resize: none;
-    &::placeholder {
-        color: $textColor;
-        font-size: 16px;
-        line-height: 1.4em;
-        letter-spacing: 0.02em;
-    }
-}
