@@ -126,7 +126,7 @@ $('.main-slider').slick({
     slidesToScroll: 1,
     dots: false,
     arrows: false,
-    infinite: true,
+    //infinite: true,
     asNavFor: '.thumb-slider'
 });
 
@@ -134,12 +134,23 @@ $('.thumb-slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: false,
-    infinite: true,
-
+    //infinite: true,
+    arrows: false,
     asNavFor: '.main-slider',
     focusOnSelect: true,
-    centerMode: false,
+    //centerMode: false,
     vertical: true,
+    verticalSwiping: true,
+    responsive: [
+        {
+          breakpoint: 1080,
+          settings: {
+            vertical: false,
+            verticalSwiping: false,
+          }
+        }
+    ],    
+
 });
 $('#company').slick({
     slidesToShow: 1,
@@ -156,11 +167,10 @@ $('#company').slick({
 let contain = document.querySelector('#contain');
 let menu = document.querySelector('.header__menu_mob ');
 let list = document.querySelector('.header__menu_mob ');
-contain.addEventListener('click', function(t) {
+contain.addEventListener('click', function() {
     contain.classList.toggle('change');
-
-
     menu.classList.toggle('actived');
+    document.body.classList.toggle('lock');
 });
 
 

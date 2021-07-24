@@ -3,4 +3,23 @@
         opacity: 0;
         visibility: hidden;
     }
+
+    & .header__wrap {
+        min-height: 100px;
+        height: auto;
+    }
+
+    & .header__collapse {
+        width: auto;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    & div[class^="line"] {
+        background-color: #fff;
+    }
+
+    & .change .line1 {
+        transform: rotate(-49deg) translate(-9px, 6px);
+    }
 }
