@@ -7625,7 +7625,6 @@ textarea {
 
 .data-img {
   margin-bottom: 50px;
-  width: 100%;
 }
 
 .main-slider {
@@ -8359,6 +8358,10 @@ textarea {
 
   .main-slider .slick-list {
     border: 1px solid #000 !important;
+  }
+
+  .data-img {
+    width: 100%;
   }
 
   .main-slider {
