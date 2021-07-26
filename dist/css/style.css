@@ -7047,6 +7047,11 @@ textarea {
   margin-left: 10px;
 }
 
+.completed.completed_new .completed__toparr {
+  cursor: pointer;
+  padding: 7px 0;
+}
+
 .articles.articles_new {
   margin-bottom: 100px;
 }

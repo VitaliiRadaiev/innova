@@ -539,6 +539,11 @@
             right: 20px;
         }
     }
+
+    & .completed__toparr {
+        cursor: pointer;
+        padding: 7px 0;
+    }
 }
 
 .articles.articles_new {
